@@ -1,0 +1,89 @@
+<!doctype html public "✰">
+<!--[if lt IE 7]> <html lang="en-us" class="no-js ie6"> <![endif]-->
+<!--[if IE 7]>    <html lang="en-us" class="no-js ie7"> <![endif]-->
+<!--[if IE 8]>    <html lang="en-us" class="no-js ie8"> <![endif]-->
+<!--[if IE 9 ]>   <html lang="en-us" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--><html lang="en-us" class="no-js "> <!--<![endif]-->
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+	<script src="jasmine/lib/jasmine-1.3.1/jasmine.js"></script>
+	<script src="jasmine/jasmine-bootstrap-master/src/jasmine-bootstrap.js"></script>
+	<link type="text/css" rel="stylesheet" media="all" href="jasmine/bootstrap/bootstrap/css/bootstrap.css"></link>
+	<link type="text/css" rel="stylesheet" media="all" href="jasmine/jasmine-bootstrap-master/src/jasmine-bootstrap.css"></link>
+
+
+
+	<script src="append_embed.js"></script>
+
+	<!--<script src="yepnope.1.5.4-min.js"></script>
+
+	<script src="api_definition.js"></script>
+	<script src="api_return.js"></script>
+	<script src="api_listener.js"></script>
+	 <script src="api_seek.js"></script>
+	<script src="api_bug.js"></script> -->
+
+</head>
+<body onload="displayQRCode(10,10);" >
+	<!--http://webvideo.massmotionmedia.com/mmm/doc/basic.html-->
+	<!--
+	<center>
+		<div style="width:300px;height:170px;margin-top:16px;" id="truc">
+			<script src="http://webvideo.massmotionmedia.com/mmm/embed/embed.js?resource=timescapes&amp;autostart=true&amp;flash_bgcolor=#000000&autorewind=false"></script>
+		</div>
+		
+	</center>-->
+	
+	<script>
+	
+	
+	function isMobile(){
+		return screen.width < 500 || navigator.userAgent.match(/Android/i) || navigator.userAgent.match(/webOS/i) || navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPod/i) || navigator.userAgent.match(/iPad/i);
+	}
+/*
+	yepnope( [ {
+	  test : isMobile(),
+	  yep  : ["api_return_mobile.js","api_listener_mobile.js"],
+	  nope : ["api_return_computer.js","api_listener_embed.js","api_seek.js"] ,
+	  both : ["api_changevideo.js","api_bug.js"] 
+	} ] );*/
+
+	function displayQRCode(ox,oy) {
+
+		var urlString = ("http://chart.apis.google.com/chart?cht=qr&chs=120x120&chl="+escape(window.location.href)).replace("?&","?");;
+			
+		var newImg = document.createElement("img");
+		newImg.src = urlString;
+		newImg.style.cssText = "position:absolute;z-index:9999;top:"+((ox)?ox:0) +"px;left:"+((oy)?oy:0)+"px;";
+		
+		document.body.appendChild(newImg);
+		
+	}
+	
+	/*setTimeout(function(){
+	 	jasmine.getEnv().addReporter(new jasmine.BootstrapReporter());
+  		jasmine.getEnv().execute();
+	}, 500);*/
+
+
+
+	/*function isControllerReady(){
+
+		if( typeof(mmmController) != "undefined" && typeof(mmm_mmm) != "undefined" ){
+
+			jasmine.getEnv().addReporter(new jasmine.BootstrapReporter());
+  			jasmine.getEnv().execute();	
+		}else{
+			setTimeout(function(){ isControllerReady(); },250);
+		}
+	}
+
+	isControllerReady();*/
+
+	</script>
+</body>
+</html>
