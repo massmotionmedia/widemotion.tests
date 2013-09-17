@@ -29,9 +29,10 @@ function appendPlayer(target,resource){
 function isControllerReady(){
 
 	if( typeof(mmmController) != "undefined" && typeof(mmm_mmm) != "undefined" ){
-
-		jasmine.getEnv().addReporter(new jasmine.TapReporter());
+		
+		jasmine.getEnv().addReporter( new TAPReporter() );
 		jasmine.getEnv().execute();	
+
 	}else{
 		setTimeout(function(){ isControllerReady(); },250);
 	}
