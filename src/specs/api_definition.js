@@ -1,7 +1,7 @@
 
 function waitAndTestPlayerReady(){
 
-	if(window.console)console.log("api_definition.js : waitAndTestPlayerReady... waits +1000" , window.mmm_ctrl, window.mmm_ctrl.isPlaying() ); 
+	if(window.console)console.log("api_definition.js : waitAndTestPlayerReady... waits +1000" , window.mmm_ctrl ); 
 
 	waits( 1000 );
 	setTimeout(	function() { if( ! eventToTest.PLAYER_READY ) waitAndTestPlayerReady();	}, 
@@ -48,6 +48,16 @@ describe("Controller is defined ?", function() {
 			expect(window.mmm_ctrl).toBeDefined();			
 		});
 	});
+
+
+	((window.isMobile())? xit : it) ("FlashPlayer is avaible", function() {
+		runs(function() {
+			var flashEnabled = !!(navigator.mimeTypes["application/x-shockwave-flash"] || window.ActiveXObject && new ActiveXObject('ShockwaveFlash.ShockwaveFlash'));
+			expect(flashEnabled).toBe(true);			
+		});
+	});
+
+	
 	
 });
 
