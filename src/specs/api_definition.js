@@ -43,7 +43,7 @@ describe("Controller is defined ?", function() {
 		});
 	});
 	
-	(window.isEmbed)? it : xit ("embed_ctrl_RANDOM is defined (crée via new mmmController)", function() {
+	((window.isEmbed)? it : xit) ("embed_ctrl_RANDOM is defined (crée via new mmmController)", function() {
 		runs(function() {
 			expect(window.mmm_ctrl).toBeDefined();			
 		});

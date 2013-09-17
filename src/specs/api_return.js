@@ -26,7 +26,7 @@ describe("Ces méthodes retournent t'elles la donnée escomptée ? ", function()
 
 	});
 	
-	( window.isMobile() )? xit : it ("mmm_ACCOUNTNAME.getCurrentTime() retourne un number > 0 ( /!\\ autostart )", function() {
+	(( window.isMobile() )? xit : it) ("mmm_ACCOUNTNAME.getCurrentTime() retourne un number > 0 ( /!\\ autostart )", function() {
 		
 		runs(function() {
 			expect( typeof(window.mmm_ctrl.getCurrentTime() ) ).toBe("number");
