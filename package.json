@@ -1,10 +1,10 @@
 {
-  "name": "tests widemotion embed",
+  "name": "widemotion.tests",
   "version": "0.0.0",
   "homepage": "http://widemotion.net", 
 
   "devDependencies": {
-    "tape": "~0.3.2"
+
   },
 
   "testling": {
