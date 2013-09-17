@@ -1,7 +1,7 @@
 
 function waitAndTestPlayerReady(){
 
-	if(window.console)console.log("api_definition.js : waitAndTestPlayerReady... waits +1000"); 
+	if(window.console)console.log("api_definition.js : waitAndTestPlayerReady... waits +1000" , window.mmm_ctrl, window.mmm_ctrl.isPlaying() ); 
 
 	waits( 1000 );
 	setTimeout(	function() { if( ! eventToTest.PLAYER_READY ) waitAndTestPlayerReady();	}, 
