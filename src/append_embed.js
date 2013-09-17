@@ -35,7 +35,7 @@ function isControllerReady(){
 
 		if(window.console)console.log("append_embed.js : init jasmine ? ");
 
-		jasmine.getEnv().addReporter( new TAPReporter() );
+		jasmine.getEnv().addReporter( new jasmine.TapReporter() );
 		jasmine.getEnv().execute();	
 
 	}else{

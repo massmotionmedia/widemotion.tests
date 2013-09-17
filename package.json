@@ -21,7 +21,7 @@
 
     "scripts": [
       "src/jasmine-1.3.1/jasmine.js",
-      "src/jasmine-1.3.1/tapreporter.js",
+      "src/jasmine-1.3.1/jasmine.tap_reporter.js",
       "src/specs/*.js",
       "src/append_embed.js"
     ]
