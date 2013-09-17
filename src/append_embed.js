@@ -26,14 +26,24 @@ function appendPlayer(target,resource){
 	target.appendChild(ctrlScript);
 }
 
+function isControllerReady(){
 
-window[ addEventListener ? 'addEventListener' : 'attachEvent' ]( addEventListener ? 'load' : 'onload', init )
+	if( typeof(mmmController) != "undefined" && typeof(mmm_mmm) != "undefined" ){
 
+		jasmine.getEnv().addReporter(new jasmine.TapReporter());
+		jasmine.getEnv().execute();	
+	}else{
+		setTimeout(function(){ isControllerReady(); },250);
+	}
+}
 
 function init(){
 
 	if(window.console)console.log("append_embed.js : init");
 	appendPlayer( buildHtml() , "timescapes" );
 
+	isControllerReady();
+
 }
 
+window[ addEventListener ? 'addEventListener' : 'attachEvent' ]( addEventListener ? 'load' : 'onload', init )
