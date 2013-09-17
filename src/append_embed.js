@@ -28,8 +28,13 @@ function appendPlayer(target,resource){
 
 function isControllerReady(){
 
+	if(window.console)console.log("append_embed.js : isControllerReady ");
+
 	if( typeof(mmmController) != "undefined" && typeof(mmm_mmm) != "undefined" ){
 		
+
+		if(window.console)console.log("append_embed.js : init jasmine ? ");
+
 		jasmine.getEnv().addReporter( new TAPReporter() );
 		jasmine.getEnv().execute();	
 
