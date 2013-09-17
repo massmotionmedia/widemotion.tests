@@ -1,5 +1,8 @@
 
 function waitAndTestPlayerReady(){
+
+	if(window.console)console.log("api_definition.js : waitAndTestPlayerReady... waits +1000"); 
+
 	waits( 1000 );
 	setTimeout(	function() { if( ! eventToTest.PLAYER_READY ) waitAndTestPlayerReady();	}, 
 				750 );	
@@ -173,8 +176,6 @@ describe("API methode ? ", function() {
 		runs(function() {
 			expect(mmm_ctrlmanager.currentDevice).toBeDefined();
 		});
-
-		alert("eventToTest.PLAYER_READY " + eventToTest.PLAYER_READY )
 
 		if(!eventToTest.PLAYER_READY ){
 			waitAndTestPlayerReady();
